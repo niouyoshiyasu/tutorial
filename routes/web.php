@@ -11,6 +11,12 @@
 |
 */
 
+Route::resource('posts', 'PostsController');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/posto', 'PostsController@index');
+
+Route::get('/child', 'PostsController@aaa');
