@@ -14,11 +14,10 @@ use Illuminate\Database\Migrations\Migration;
 	public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->string('content');
-            $table->string('created_at');
-            $table->string('updated_at');
+			$table->increments('id');
+			$table->string('title');
+			$table->text('content');
+			$table->timestamps();
         });
     }
 

@@ -1,0 +1,19 @@
+GRANT ALL PRIVILEGES ON blog.* TO 'dev01'@localhost IDENTIFIED BY 'dev01';
+GRANT ALL PRIVILEGES ON blog.* TO dev01@localhost IDENTIFIED BY 'dev01';
+
+mysql_config_editor set --user=dev01 --password
+mysql_config_editor set --login-path=mysqldump --user=root --password
+
+drop user 'dev01'@'localhost';
+
+iTkj7^q5
+
+'id' => 1,
+'title' => 'sample',
+'content' => 'I have a pen.',
+'created_at' => '2017-05-05 10:10:10'
+
+DB::table('posts')->insert([
+            'title' => 'sample',
+            'content' => 'I have a pen.',
+    ]);
