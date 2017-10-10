@@ -23,4 +23,16 @@ class PostsController extends Controller
 	{
 		return view('detail', compact('post'));
 	}
+
+	public function create()
+	{
+		$post = new Post();
+		return view('update', compact('post'));
+	}
+
+	public function store(Request $request)
+	{
+		$post = Post::create($request->all());
+		return redirect()->route('posts.index');
+	}
 }
