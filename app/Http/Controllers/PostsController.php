@@ -12,19 +12,15 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+	public function index()
     {
-        //
-		return view('index');
+        $posts = Post::all();
+
+        return view('index', compact('posts'));
     }
-	/**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function aaa()
-    {
-        //
-		return view('child');
-    }
+
+	public function show(Post $post)
+	{
+		return view('detail', compact('post'));
+	}
 }

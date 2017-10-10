@@ -1,11 +1,19 @@
-<!-- about.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>test</title>
-</head>
-<body>
-    <h1>テスト</h1>
-</body>
-</html>
+@section('app')
+
+<h1>index</h1>
+
+    <ul>
+        @foreach ($posts as $post)
+            <li＞
+			<BR>
+                <li>
+					<a href={{ action('PostsController@show', [$post]) }} >{{ $post->title }}</a>
+				</li>
+			</BR>
+            </li>
+        @endforeach
+    </ul>
+
+@endsection
