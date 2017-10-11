@@ -35,4 +35,22 @@ class PostsController extends Controller
 		$post = Post::create($request->all());
 		return redirect()->route('posts.index');
 	}
+
+	public function edit(Post $post)
+	{
+		return view('create', compact('post'));
+	}
+
+	public function update(Request $request, Post $post)
+	{
+		$post->update($request->all());
+
+		return redirect()->route('posts.index');
+	}
+
+	public function destroy(String $id)
+    {
+		Post::where('id', $id)->delete();
+        return redirect('/posts');
+    }
 }
