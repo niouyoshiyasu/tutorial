@@ -14,9 +14,9 @@ class PostsController extends Controller
      */
 	public function index()
     {
-        $posts = Post::all();
+        $posts = Post::simplePaginate(5);
 
-        return view('index', compact('posts'));
+        return view('index', compact('posts','search'));
     }
 
 	public function show(Post $post)
@@ -53,4 +53,5 @@ class PostsController extends Controller
 		Post::where('id', $id)->delete();
         return redirect('/posts');
     }
+
 }

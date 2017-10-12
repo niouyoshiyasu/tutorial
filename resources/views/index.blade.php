@@ -4,6 +4,11 @@
 
 <h1>一覧</h1>
 
+{!! Form::open(['method' => 'GET']) !!}
+    {!! Form::text('s', null) !!}
+    {!! Form::submit('検索') !!}
+{!! Form::close() !!}	
+
 <h3>
 	<a href={{ action('PostsController@create')}} > 新しく作る</a>
 </h3>
@@ -20,5 +25,7 @@
             </li>
         @endforeach
     </ul>
+
+	{{ $posts -> links() }}
 
 @endsection
